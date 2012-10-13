@@ -6,6 +6,7 @@ class App3(App):
     """Extension from problem 3 to problem 4"""
     def __init__(self, master):
         self.master = master
+        self.colorDict()
         
         # we initialize our previous problem
         prob3 = self.prob3 = App(master)
@@ -33,6 +34,7 @@ class App3(App):
             self.matrix = numpy.copy(self.prob3.conMat)
         except:
             tkMessageBox.showerror('Usage Error','You must first generate a gragh BEFORE animating it!')
+        
         #generate the edges from the matrix
         self.genEdges()
         
@@ -63,12 +65,12 @@ class App3(App):
         If we don't do this, then networkx will spit out a nasty error and crash
         """
         #get the points users wants fromt the gui
-        point1 = self.vEntry1.get()
-        point2 = self.vEntry2.get()
+        point1 = int(self.vEntry1.get())
+        point2 = int(self.vEntry2.get())
+        print point1,point2
         
         #flatten the edge list and remove duplicates
         flatList = list(set([item for sublist in self.edges for item in sublist]))
-        
         if point1 in flatList:
             if point2 in flatList:
                 return True
@@ -112,9 +114,9 @@ class App3(App):
         """
         self.prob3.canvas.delete('animate')
         vert = self.prob3.vert
-        print vert
         scale = self.prob3.scale
         size = self.prob3.size
+        inc = 1
         for item in self.paths:
             for x in range(len(item)-1):
                 start = item[x]
@@ -123,7 +125,17 @@ class App3(App):
                 startY = int(vert[start][1]*scale + size/2)
                 endX = int(vert[stop][0]*scale + size/2)
                 endY = int(vert[stop][1]*scale + size/2)
-                self.prob3.canvas.create_line(startX,startY,endX,endY,fill='orange',tag='animate')
+                self.prob3.canvas.after(1000)
+                self.prob3.canvas.create_line(startX,startY,endX,endY,width=3,fill=self.colors[inc],tag='animate')
+                self.prob3.canvas.update()
+            inc = inc + 1
+            if inc > 12: inc = inc - 12
+    
+    def colorDict(self):
+        """creates a dictionary of colors for us to use"""
+        self.colors = {1:'orange',2:'green',3:'purple',4:'yellow',5:'beige',6:'blue',7:'brown',8:'chartreuse',9:'coral',10:'cyan',11:'DarkGreen',12:'DeepPink'}
+            
+    
 
 if __name__ == '__main__':
     root = Tk()
