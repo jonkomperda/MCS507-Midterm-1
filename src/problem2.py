@@ -1,12 +1,12 @@
 class stirling():
-    """docstring for stirling"""
+    """Upon initialization we have the dictionary with the 0,0 condition created."""
     def __init__(self, n, k):
         self.dict = {(0,0):1} #start with the initial condition (saves an if statement)
         self.answer = self.c(n,k)
         
     
     def c(self, n, k):
-        """docstring for compute"""
+        """Computes stirling numbers either recursively or by looking up in dictionary"""
         if (n,k) in self.dict.keys():
             #print 'using dict for: '+str((n,k)) #checks to see if we used the dictionary or not
             return self.dict[(n,k)]

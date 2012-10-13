@@ -131,6 +131,7 @@ class App3(App):
             inc = inc + 1
             if inc > 12: inc = inc - 12
     
+    
     def colorDict(self):
         """creates a dictionary of colors for us to use"""
         self.colors = {1:'orange',2:'green',3:'purple',4:'yellow',5:'beige',6:'blue',7:'brown',8:'chartreuse',9:'coral',10:'cyan',11:'DarkGreen',12:'DeepPink'}

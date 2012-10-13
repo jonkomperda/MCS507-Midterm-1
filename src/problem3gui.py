@@ -43,7 +43,9 @@ class App(Frame):
     
     
     def drawPoints(self,vert):
-        #print self.width
+        """
+        draws the nodes on the canvas
+        """
         rad = self.rad
         count = 0
         for p in vert:
@@ -54,6 +56,9 @@ class App(Frame):
     
     
     def calcConn(self,conMat):
+        """
+        Calculates the connections so we know which nodes to draw lines between
+        """
         for i in range(len(conMat)):
             for j in range(i,len(conMat)):
                 if conMat[i,j]==1:
@@ -61,7 +66,7 @@ class App(Frame):
     
     
     def drawLine(self,start,stop):
-        """docstring for drawLines"""
+        """draws the actual lines representing the connections"""
         startX = int(self.vert[start][0]*self.scale + self.size/2)
         startY = int(self.vert[start][1]*self.scale + self.size/2)
         endX = int(self.vert[stop][0]*self.scale + self.size/2)
