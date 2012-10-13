@@ -1,2 +1,6 @@
 src/problem3.pyc
 *.pyc
+*.log
+*.aux
+*.gz
+.DS_Store
