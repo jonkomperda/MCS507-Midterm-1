@@ -8,15 +8,14 @@ class contFrac():
     def step(self):
         """takes a step in the continued fraction representation"""
         out = self.x // self.n # // is integer division in python 2.2+
-        self.n = self.x-self.n*out
-        self.x = self.n
+        self.n, self.x = self.x-self.n*out, self.n
         self.output.append(out)
         return out
     
     def next(self):
         """this is our iterator"""
         if self.n:
-            return self.step()
+            print self.step()
         else:
             raise StopIteration("You have exceeded the number of terms")
     
@@ -25,9 +24,10 @@ class contFrac():
         return str(self.output)
     
 if __name__ == '__main__':
-    a = contFrac(9,4)
-    print a.next()
-    
-    print a.next()
-    
-    print a.next()
+    from math import pi
+    a = contFrac(pi,1)
+    a.next()
+    a.next()
+    a.next()
+    a.next()
+    a.next()
