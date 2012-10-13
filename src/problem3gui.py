@@ -22,7 +22,7 @@ class App(Frame):
         self.canvas.pack(fill=BOTH,expand=YES)
         self.canvas.config(background='black', borderwidth = 0)
         
-        self.nEntry = Entry(self.top, width=30)
+        self.nEntry = Entry(self.top, width=10)
         self.nEntry.pack(side=LEFT, expand=False)
         self.nEntry.insert(0,'n vertices')
         
