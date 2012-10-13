@@ -67,10 +67,10 @@ class App3(App):
         #get the points users wants fromt the gui
         point1 = int(self.vEntry1.get())
         point2 = int(self.vEntry2.get())
-        print point1,point2
         
         #flatten the edge list and remove duplicates
         flatList = list(set([item for sublist in self.edges for item in sublist]))
+        print 'Possible node selections are: '+ str(flatList)
         if point1 in flatList:
             if point2 in flatList:
                 return True
@@ -125,8 +125,8 @@ class App3(App):
                 startY = int(vert[start][1]*scale + size/2)
                 endX = int(vert[stop][0]*scale + size/2)
                 endY = int(vert[stop][1]*scale + size/2)
-                self.prob3.canvas.after(1000)
                 self.prob3.canvas.create_line(startX,startY,endX,endY,width=3,fill=self.colors[inc],tag='animate')
+                self.prob3.canvas.after(1000)
                 self.prob3.canvas.update()
             inc = inc + 1
             if inc > 12: inc = inc - 12
