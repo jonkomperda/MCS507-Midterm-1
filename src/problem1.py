@@ -9,15 +9,24 @@ class contFrac():
         """takes a step in the continued fraction representation"""
         out = self.x // self.n # // is integer division in python 2.2+
         self.n, self.x = self.x-self.n*out, self.n
-        self.output.append(out)
-        return out
+        self.output.append(int(out))
+        return int(out)
     
     def next(self):
         """this is our iterator"""
         if self.n:
-            print self.step()
+            return self.step()
         else:
             raise StopIteration("You have exceeded the number of terms")
+    
+    def run(self):
+        """
+        Runs the continued fraction until we're out of digits
+        Not part of the assignment, but eases testing since you dont need to take
+        individual steps. Automatically stops when out of digits
+        """
+        while self.n:
+            self.step()
     
     def __str__(self):
         """string representation of our data"""
@@ -25,9 +34,18 @@ class contFrac():
     
 if __name__ == '__main__':
     from math import pi
-    a = contFrac(pi,1)
+    print 'First we do the example presented in the assignment:'
+    print 'Calculating continued fraction of 9/4'
+    a = contFrac(9,4)
+    b = [a.next() for x in range(2)]
+    print b
+    
+    print '\nWe now calculate the continued fraction of pi for 10 digits for a benchmark'
+    c = contFrac(pi,1)
+    d = [c.next() for x in range(10)]
+    print 'Computed Value: ' + str(d)
+    print 'Bench Value:    [3, 7, 15, 1, 292, 1, 1, 1, 2, 1]'
+    
+    print '\nNow show that the iterator raises an error if you go too far...'
     a.next()
-    a.next()
-    a.next()
-    a.next()
-    a.next()
+    
