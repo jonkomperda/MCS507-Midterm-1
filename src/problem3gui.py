@@ -22,13 +22,13 @@ class App(Frame):
         self.canvas.pack(fill=BOTH,expand=YES)
         self.canvas.config(background='black', borderwidth = 0)
         
-        self.nEntry = Entry(self.top)
+        self.nEntry = Entry(self.top, width=30)
         self.nEntry.pack(side=LEFT, expand=False)
         self.nEntry.insert(0,'n vertices')
         
         self.go = Button(self.top,text='Generate', command = self.mainLogic)
         self.go.pack(side=LEFT, expand=False)
-        
+    
     
     def mainLogic(self):
         """Main execution loop when button is pressed"""
@@ -38,9 +38,10 @@ class App(Frame):
         self.vert = vert = genVertList(n)
         self.drawPoints(vert)
         
-        conMat = ranSymMatrix(n)
+        self.conMat = conMat = ranSymMatrix(n)
         self.calcConn(conMat)
-        
+    
+    
     def drawPoints(self,vert):
         #print self.width
         rad = self.rad
@@ -51,11 +52,13 @@ class App(Frame):
             self.canvas.create_oval(x-rad,y-rad,x+rad,y+rad,width=1,outline='red',fill='red',tag=count)
             count = count+1
     
+    
     def calcConn(self,conMat):
         for i in range(len(conMat)):
             for j in range(i,len(conMat)):
                 if conMat[i,j]==1:
                     self.drawLine(i,j)
+    
     
     def drawLine(self,start,stop):
         """docstring for drawLines"""
@@ -65,9 +68,9 @@ class App(Frame):
         endY = int(self.vert[stop][1]*self.scale + self.size/2)
         
         self.canvas.create_line(startX,startY,endX,endY,fill='white')
-        
-
     
+    
+
 if __name__ == '__main__':
     root = Tk()
     app = App(root)
