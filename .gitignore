@@ -4,3 +4,5 @@ src/problem3.pyc
 *.aux
 *.gz
 .DS_Store
+*.out
+*.pdf
