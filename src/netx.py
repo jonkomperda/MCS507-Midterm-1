@@ -3,6 +3,10 @@ import numpy
 import problem3
 #import matplotlib.pyplot as plt
 
+"""
+This file is for testing how NetworkX works and whether or not we get the correct connetions.
+"""
+
 G = nx.Graph()
 
 a = numpy.array([[0,0,0,0,1],[1,0,1,0,0],[0,1,0,1,1],[0,0,1,0,1],[1,0,1,1,0]])
