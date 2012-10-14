@@ -6,7 +6,10 @@ The first problem outlines the need to program a script with the ability to give
 
 We begin by defining a continued fraction taking the form,
 \begin{equation}
-    L = a_0 + \frac{ 1 }{ a_1 + \frac{ 1 }{ a_2 + \frac{ 1 }{ \ddots + \frac{ 1 }{ a_n } } } }
+    L = a_0 + + \cfrac{1}{a_1
+              + \cfrac{1}{a_2
+              + \cfrac{1}{\ddots
+              + \cfrac{1}{a_n}}}}
 \end{equation}
 The solution may be found by performing a series of integer divisions.
 \subsection{Program Description} % (fold)
@@ -29,16 +32,16 @@ In Listing \ref{lst:convCalc} we see that the function operates on two class var
         else:
             raise StopIteration("You have exceeded the number of terms")
 \end{lstlisting}\noindent
-For the second portion of the problem, we are required to use an iterator to allow the user to iterate as they choose. The method shown in Listing \ref{lst:iterator} shows the use of an iterator to return a single single convergent which is usable in a list comprehension. Similarly, we see that the iterator checks whether more convergents may be calculated prior to performing a step; if the user attempts return a convergent which does not exist we raise an exception.
+For the second portion of the problem, we are required to use an iterator to allow the user to iterate as they choose. The method shown in Listing \ref{lst:iterator} shows the use of an iterator to return a single convergent which is usable in a list comprehension. Similarly, we see that the iterator checks whether more convergents may be calculated prior to performing a step; if the user attempts return a convergent which does not exist we raise an exception.
 % subsection program_description (end)
 
 \subsection{Results} % (fold)
 \label{sub:results}
-We detail a set of tests to perform on the script. The first is agreement with the assignment. We wish to calculate the continued fraction of 2.25. Similarly to check the fractional output (in addition to what was assigned) we input a value of 9/4. The final test is comparison against the widely available continued fraction of $\pi$, which was pulled from the internet for comparison.
+We detail a set of tests to perform on the script. The first is agreement with the assignment, calculation of the continued fraction of 2.25. Similarly to check the fractional output (in addition to what was assigned) we input a value of 9/4. The final test is comparison against the widely available continued fraction of $\pi$, which was pulled from the internet for comparison.
 
 \begin{figure}[H]
     \centering
-        \includegraphics[height=3in]{include/prob1test.png}
+        \includegraphics[height=3in, trim=0 .2in 0 0]{include/prob1test.png}
     \caption{Output generated from test routine for Problem 1}
     \label{fig:include_prob1test}
 \end{figure}\noindent
