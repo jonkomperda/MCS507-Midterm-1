@@ -12,7 +12,7 @@
 \definecolor{dkred}{rgb}{0.7,0,0}
 
 \lstset{ %
-  language=Fortran,                % the language of the code
+  language=Python,                % the language of the code
   basicstyle=\small,              % the size of the fonts that are used for the code
   numbers=left,                   % where to put the line-numbers
   numberstyle=\small\color{gray},  % the style that is used for the line-numbers
@@ -37,7 +37,7 @@
   escapeinside={\%*}{*)},            % if you want to add a comment within your code
   morekeywords={class,private,procedure,device},               % if you want to add more keywords to the set
   emphstyle=\color{dkred},
-  emph={MPI_BCAST,MPI_INTEGER,MPI_COMM_WORLD,ierror,MPI_RECV,MPI_SEND,MPI_DOUBLE_PRECISION,MPI_SCATTER,MPI_GATHER,MPI_INIT,MPI_COMM_SIZE,MPI_COMM_RANK,MPI_WTIME,MPI_BARRIER}
+  emph={}
 }
 
 \begin{document}
@@ -46,4 +46,5 @@
 
 \input{include/problem1.tex}
 
+\input{include/problem2.tex}
 \end{document}

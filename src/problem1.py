@@ -1,6 +1,6 @@
 class contFrac():
     """Calculates the continued fraction representation of x"""
-    def __init__(self, x, n):
+    def __init__(self, x, n=1):
         self.x = x
         self.n = n
         self.output = []
@@ -35,13 +35,17 @@ class contFrac():
 if __name__ == '__main__':
     from math import pi
     print 'First we do the example presented in the assignment:'
-    print 'Calculating continued fraction of 9/4'
-    a = contFrac(9,4)
+    print 'Calculating continued fraction of 2.25'
+    a = contFrac(2.25)
     b = [a.next() for x in range(2)]
     print b
+    print 'Calculating continued fraction of 9/4'
+    e = contFrac(9,4)
+    f = [e.next() for x in range(2)]
+    print f
     
     print '\nWe now calculate the continued fraction of pi for 10 digits for a benchmark'
-    c = contFrac(pi,1)
+    c = contFrac(pi)
     d = [c.next() for x in range(10)]
     print 'Computed Value: ' + str(d)
     print 'Bench Value:    [3, 7, 15, 1, 292, 1, 1, 1, 2, 1]'
