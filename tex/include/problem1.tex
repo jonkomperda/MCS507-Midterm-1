@@ -32,12 +32,12 @@ In Listing \ref{lst:convCalc} we see that the function operates on two class var
         else:
             raise StopIteration("You have exceeded the number of terms")
 \end{lstlisting}\noindent
-For the second portion of the problem, we are required to use an iterator to allow the user to iterate as they choose. The method shown in Listing \ref{lst:iterator} shows the use of an iterator to return a single convergent which is usable in a list comprehension. Similarly, we see that the iterator checks whether more convergents may be calculated prior to performing a step; if the user attempts return a convergent which does not exist we raise an exception.
+For the second portion of the problem, we are required to use an iterator to allow the user to iterate as they choose. The method shown in Listing \ref{lst:iterator} shows the use of an iterator to return a single convergent which is usable in a list comprehension. Similarly, we see that the iterator checks whether more convergents may be calculated prior to performing a step; if the user attempts to return a convergent which does not exist we raise an exception.
 % subsection program_description (end)
 
 \subsection{Results} % (fold)
 \label{sub:results}
-We detail a set of tests to perform on the script. The first is agreement with the assignment, calculation of the continued fraction of 2.25. Similarly to check the fractional output (in addition to what was assigned) we input a value of 9/4. The final test is comparison against the widely available continued fraction of $\pi$, which was pulled from the internet for comparison.
+We detail a set of tests to perform on the script. The first test is whether the script agrees with the assignment: calculation of the continued fraction of 2.25. Similarly, to check the fractional output (in addition to what was assigned) we input a value of 9/4. The final test is comparison against the widely available continued fraction of $\pi$, which was pulled from the internet for comparison.
 
 \begin{figure}[H]
     \centering

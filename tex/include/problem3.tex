@@ -34,7 +34,7 @@ In Listing \ref{lst:ranSym} we generate a random matrix of zeros and ones on lin
         self.conMat = conMat = ranSymMatrix(n)
         self.calcConn(conMat)
 \end{lstlisting}\noindent
-Our main logic when the button pressed is shown in Listing \ref{lst:mainGui}. We begin by clearing the canvas to ensure no previous results are displayed. We then evaluate the string in the entry box and cast it to an integer. The function $genVertList$ generates $n$ vertices on a unit circle. These vertices are then drawn on the canvas using \emph{drawPoints}. The next step is to generate our adjacency matrix, and pass it to the function \emph{calcConn}, which calculates which vertices are connected and draws a line between them.
+Our main logic when the button pressed is shown in Listing \ref{lst:mainGui}. We begin by clearing the canvas to ensure no previous results are displayed. We then evaluate the string in the entry box and cast it to an integer. The function $genVertList$ generates $n$ vertices on a unit circle. These vertices are then drawn on the canvas using \emph{drawPoints}. The next step is to generate our adjacency matrix and pass it to the function \emph{calcConn}, which calculates which vertices are connected and draws a line between them.
 % subsection program_description (end)
 
 

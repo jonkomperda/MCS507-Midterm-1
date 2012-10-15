@@ -5,9 +5,9 @@
 We wish to generate Stirling numbers of the first kind which are calculated using the recurrence
 \begin{equation}
     \label{eq:stirling}
-    c(n,k) = -(n-1)\times c(n-1,k) + c(n-1,k-1), \mbox{for } n \ge1 \mbox{ and } k \ge 1
+    c(n,k) = -(n-1)\times c(n-1,k) + c(n-1,k-1), \mbox{for } n \ge1 \mbox{ and } k \ge 1.
 \end{equation}
-and the initial conditions $c(n,k)=0$ if $n\le0$ or $k\le0$, and $c(0,0)=1$. We intend to write a script which contains a class with the recursive function as well a dictionary which may be used to store previous values.
+and the initial conditions $c(n,k)=0$ if $n\le0$ or $k\le0$, and $c(0,0)=1$. We intend to write a script which contains a class with the recursive function, as well a dictionary, which may be used to store previous values.
 
 \subsection{Program Description} % (fold)
 \label{sub:program_description2}
@@ -88,7 +88,7 @@ A quick test was initially performed on the code to see whether it was producing
     \label{tab:stirNumRef}
     }
 \end{table}\noindent
-For the final comparison we generated all Stirling numbers from $n=1,k=1$ to $n=5,k=5$. The results are shown in Table \ref{tab:stirNum} and may be compared to the benchmark unsigned Stirling numbers in Table \ref{tab:stirNumRef}. With the exception of sign, we see perfect correlation.
+For the final comparison we generated all Stirling numbers from $n=1,k=1$ to $n=5,k=5$. The results are shown in Table \ref{tab:stirNum} and may be compared to the benchmark unsigned Stirling numbers in Table \ref{tab:stirNumRef}. With the exception of sign we see perfect correlation.
 
 % subsection results (end)
 % section stirling_numbers (end)
